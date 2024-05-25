@@ -1,0 +1,247 @@
+{
+  "15": {
+    "inputs": {
+      "directory": [
+        "156",
+        1
+      ],
+      "image_load_cap": 0,
+      "skip_first_images": 0,
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadImagesPath",
+    "_meta": {
+      "title": "Load Images (Path) 🎥🅥🅗🅢"
+    }
+  },
+  "17": {
+    "inputs": {
+      "frame_rate": [
+        "53",
+        0
+      ],
+      "loop_count": 0,
+      "filename_prefix": [
+        "204",
+        0
+      ],
+      "format": "video/h264-mp4",
+      "pix_fmt": "yuv420p",
+      "crf": 19,
+      "save_metadata": false,
+      "pingpong": false,
+      "save_output": true,
+      "images": [
+        "15",
+        0
+      ]
+    },
+    "class_type": "VHS_VideoCombine",
+    "_meta": {
+      "title": "视频1"
+    }
+  },
+  "53": {
+    "inputs": {
+      "value": 24
+    },
+    "class_type": "Float",
+    "_meta": {
+      "title": "Frame Rate"
+    }
+  },
+  "156": {
+    "inputs": {
+      "text": [
+        "158",
+        0
+      ],
+      "text_b": [
+        "197",
+        0
+      ],
+      "text_c": [
+        "199",
+        0
+      ],
+      "text_d": [
+        "200",
+        0
+      ]
+    },
+    "class_type": "Text String",
+    "_meta": {
+      "title": "Text String"
+    }
+  },
+  "158": {
+    "inputs": {
+      "string": "C:/Users/yangxinmin/Desktop/workspace/comfyui"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Base Path"
+    }
+  },
+  "159": {
+    "inputs": {
+      "string": "/test1/Raw"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "images1"
+    }
+  },
+  "160": {
+    "inputs": {
+      "string": "/test1/Refined"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "images2"
+    }
+  },
+  "161": {
+    "inputs": {
+      "string": "/test1/FaceFix"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "images3"
+    }
+  },
+  "162": {
+    "inputs": {
+      "text": [
+        "156",
+        1
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
+  },
+  "190": {
+    "inputs": {
+      "string": "video"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Video FileName Prefix"
+    }
+  },
+  "194": {
+    "inputs": {
+      "text": [
+        "156",
+        1
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
+  },
+  "195": {
+    "inputs": {
+      "text": [
+        "156",
+        2
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
+  },
+  "196": {
+    "inputs": {
+      "text": [
+        "156",
+        3
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Show Text 🐍"
+    }
+  },
+  "197": {
+    "inputs": {
+      "text1": [
+        "158",
+        0
+      ],
+      "text2": [
+        "159",
+        0
+      ],
+      "separator": ""
+    },
+    "class_type": "CR Text Concatenate",
+    "_meta": {
+      "title": "🔤 CR Text Concatenate"
+    }
+  },
+  "199": {
+    "inputs": {
+      "text1": [
+        "158",
+        0
+      ],
+      "text2": [
+        "160",
+        0
+      ],
+      "separator": ""
+    },
+    "class_type": "CR Text Concatenate",
+    "_meta": {
+      "title": "🔤 CR Text Concatenate"
+    }
+  },
+  "200": {
+    "inputs": {
+      "text1": [
+        "158",
+        0
+      ],
+      "text2": [
+        "161",
+        0
+      ],
+      "separator": ""
+    },
+    "class_type": "CR Text Concatenate",
+    "_meta": {
+      "title": "🔤 CR Text Concatenate"
+    }
+  },
+  "202": {
+    "inputs": {
+      "int_": 4
+    },
+    "class_type": "CR Integer To String",
+    "_meta": {
+      "title": "🔧 CR Integer To String"
+    }
+  },
+  "204": {
+    "inputs": {
+      "text1": [
+        "190",
+        0
+      ],
+      "text2": [
+        "202",
+        0
+      ],
+      "separator": "_0"
+    },
+    "class_type": "Concat Text _O",
+    "_meta": {
+      "title": "Concat Text _O"
+    }
+  }
+}

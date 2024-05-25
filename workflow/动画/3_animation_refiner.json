@@ -1,0 +1,1173 @@
+{
+  "1": {
+    "inputs": {
+      "ckpt_name": "imp_v10.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load AD Checkpoint"
+    }
+  },
+  "3": {
+    "inputs": {
+      "text": [
+        "4",
+        0
+      ],
+      "parser": "comfy",
+      "mean_normalization": true,
+      "multi_conditioning": true,
+      "use_old_emphasis_implementation": false,
+      "with_SDXL": false,
+      "ascore": 6,
+      "width": 1024,
+      "height": 1024,
+      "crop_w": 0,
+      "crop_h": 0,
+      "target_width": 1024,
+      "target_height": 1024,
+      "text_g": "",
+      "text_l": "",
+      "smZ_steps": 1,
+      "clip": [
+        "76",
+        1
+      ]
+    },
+    "class_type": "smZ CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode++"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": "(masterpiece, top quality, best quality, official art, beautiful and aesthetic:1.2) background is abstract, particles, diamonds, lots of crystals, floating crystals, rage anime, r1ge, background is pure black, black background, "
+    },
+    "class_type": "Text Multiline",
+    "_meta": {
+      "title": "Positive"
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": "ugly, buildings, deformed, bad lighting, blurry, text, clouds, watermark, extra hands, bad quality, deformed hands, deformed fingers, nostalgic, drawing, painting, bad anatomy, worst quality, blurry, blurred, normal quality, bad focus, tripod, three legs, weird legs, short legs, bag, handbag, 3 hands, 4 hands, three hands\n\n(embedding:BadDream:1) boy, man, male,\n(embedding:ng_deepnegative_v1_75t:1), \n(embedding:epiCNegative:1), \n(embedding:bad-picture-chill-75v:1), \n(embedding:AS-YoungV2-neg:1), \n(embedding:ERA09NEGV2:1) "
+    },
+    "class_type": "Text Multiline",
+    "_meta": {
+      "title": "Negative"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": [
+        "5",
+        0
+      ],
+      "parser": "comfy",
+      "mean_normalization": true,
+      "multi_conditioning": false,
+      "use_old_emphasis_implementation": false,
+      "with_SDXL": false,
+      "ascore": 6,
+      "width": 1024,
+      "height": 1024,
+      "crop_w": 0,
+      "crop_h": 0,
+      "target_width": 1024,
+      "target_height": 1024,
+      "text_g": "",
+      "text_l": "",
+      "smZ_steps": 1,
+      "clip": [
+        "76",
+        1
+      ]
+    },
+    "class_type": "smZ CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode++"
+    }
+  },
+  "11": {
+    "inputs": {
+      "pixels": [
+        "36",
+        0
+      ],
+      "vae": [
+        "81",
+        0
+      ]
+    },
+    "class_type": "VAEEncode",
+    "_meta": {
+      "title": "VAE Encode"
+    }
+  },
+  "13": {
+    "inputs": {
+      "samples": [
+        "109",
+        0
+      ],
+      "vae": [
+        "81",
+        0
+      ]
+    },
+    "class_type": "VAEDecode",
+    "_meta": {
+      "title": "VAE Decode"
+    }
+  },
+  "14": {
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "clip": [
+        "1",
+        1
+      ],
+      "lora_stack": [
+        "124",
+        0
+      ]
+    },
+    "class_type": "CR Apply LoRA Stack",
+    "_meta": {
+      "title": "💊 CR Apply LoRA Stack"
+    }
+  },
+  "15": {
+    "inputs": {
+      "control_net_name": "control_v11p_sd15_openpose.pth"
+    },
+    "class_type": "ControlNetLoaderAdvanced",
+    "_meta": {
+      "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
+    }
+  },
+  "17": {
+    "inputs": {
+      "directory": [
+        "183",
+        0
+      ],
+      "image_load_cap": [
+        "151",
+        0
+      ],
+      "start_index": 0
+    },
+    "class_type": "LoadImagesFromDirectory",
+    "_meta": {
+      "title": "ControlNet 1"
+    }
+  },
+  "19": {
+    "inputs": {
+      "control_net_name": "control_v11p_sd15_softedge.pth"
+    },
+    "class_type": "ControlNetLoaderAdvanced",
+    "_meta": {
+      "title": "Load Advanced ControlNet Model 🛂🅐🅒🅝"
+    }
+  },
+  "20": {
+    "inputs": {
+      "directory": [
+        "179",
+        0
+      ],
+      "image_load_cap": [
+        "151",
+        0
+      ],
+      "start_index": 0
+    },
+    "class_type": "LoadImagesFromDirectory",
+    "_meta": {
+      "title": "ControlNet 2"
+    }
+  },
+  "21": {
+    "inputs": {
+      "directory": [
+        "175",
+        0
+      ],
+      "image_load_cap": [
+        "151",
+        0
+      ],
+      "start_index": 0
+    },
+    "class_type": "LoadImagesFromDirectory",
+    "_meta": {
+      "title": "Raw Images"
+    }
+  },
+  "26": {
+    "inputs": {
+      "images": [
+        "62",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Output"
+    }
+  },
+  "29": {
+    "inputs": {
+      "output_path": [
+        "171",
+        0
+      ],
+      "filename_prefix": [
+        "69",
+        0
+      ],
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "quality": 100,
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "true",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "82",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "36": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "scale_by": [
+        "39",
+        0
+      ],
+      "image": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "Downscale Image"
+    }
+  },
+  "39": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "Refiner Upscale"
+    }
+  },
+  "40": {
+    "inputs": {
+      "int_": [
+        "42",
+        1
+      ]
+    },
+    "class_type": "CR Integer To String",
+    "_meta": {
+      "title": "."
+    }
+  },
+  "42": {
+    "inputs": {
+      "image": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "GetImageSize"
+    }
+  },
+  "43": {
+    "inputs": {
+      "int_": [
+        "42",
+        0
+      ]
+    },
+    "class_type": "CR Integer To String",
+    "_meta": {
+      "title": "."
+    }
+  },
+  "45": {
+    "inputs": {
+      "images": [
+        "61",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Raw Images"
+    }
+  },
+  "48": {
+    "inputs": {
+      "text": [
+        "43",
+        0
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Output Width Check"
+    }
+  },
+  "49": {
+    "inputs": {
+      "text": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Output Height Check"
+    }
+  },
+  "50": {
+    "inputs": {
+      "context_length": 16,
+      "context_stride": 1,
+      "context_overlap": 4,
+      "context_schedule": "uniform",
+      "closed_loop": true,
+      "fuse_method": "flat",
+      "use_on_equal_length": false,
+      "start_percent": 0,
+      "guarantee_steps": 1
+    },
+    "class_type": "ADE_AnimateDiffUniformContextOptions",
+    "_meta": {
+      "title": "Context Options◆Looped Uniform 🎭🅐🅓"
+    }
+  },
+  "51": {
+    "inputs": {
+      "model_name": "motionModel_v01.ckpt",
+      "beta_schedule": "sqrt_linear (AnimateDiff)",
+      "motion_scale": 1,
+      "apply_v2_models_properly": false,
+      "model": [
+        "14",
+        0
+      ],
+      "context_options": [
+        "50",
+        0
+      ],
+      "motion_model_settings": [
+        "131",
+        0
+      ]
+    },
+    "class_type": "ADE_AnimateDiffLoaderWithContext",
+    "_meta": {
+      "title": "AnimateDiff Loader [Legacy] 🎭🅐🅓①"
+    }
+  },
+  "55": {
+    "inputs": {
+      "seed": 1069195821123675
+    },
+    "class_type": "Seed Generator",
+    "_meta": {
+      "title": "Seed"
+    }
+  },
+  "61": {
+    "inputs": {
+      "split_index": 5,
+      "images": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "VHS_SplitImages",
+    "_meta": {
+      "title": "Preview Only 5 Images"
+    }
+  },
+  "62": {
+    "inputs": {
+      "split_index": 5,
+      "images": [
+        "82",
+        0
+      ]
+    },
+    "class_type": "VHS_SplitImages",
+    "_meta": {
+      "title": "Preview Only 5 Images"
+    }
+  },
+  "66": {
+    "inputs": {
+      "int": 1
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Batch Number Naming"
+    }
+  },
+  "67": {
+    "inputs": {
+      "int_": [
+        "66",
+        0
+      ]
+    },
+    "class_type": "CR Integer To String",
+    "_meta": {
+      "title": "🔧 CR Integer To String"
+    }
+  },
+  "68": {
+    "inputs": {
+      "text": "Refined_Batch_",
+      "text_b": "",
+      "text_c": "",
+      "text_d": ""
+    },
+    "class_type": "Text String",
+    "_meta": {
+      "title": "Name"
+    }
+  },
+  "69": {
+    "inputs": {
+      "delimiter": "",
+      "clean_whitespace": "true",
+      "text_a": [
+        "68",
+        0
+      ],
+      "text_b": [
+        "67",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "76": {
+    "inputs": {
+      "lora_name": "LCM_LoRA_Weights_SD15.safetensors",
+      "strength_model": [
+        "80",
+        0
+      ],
+      "strength_clip": 1,
+      "model": [
+        "51",
+        0
+      ],
+      "clip": [
+        "14",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LCM LoRA"
+    }
+  },
+  "77": {
+    "inputs": {
+      "sampling": "lcm",
+      "zsnr": false,
+      "model": [
+        "76",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingDiscrete",
+    "_meta": {
+      "title": "ModelSamplingDiscrete"
+    }
+  },
+  "78": {
+    "inputs": {
+      "float": 3
+    },
+    "class_type": "Cfg Literal",
+    "_meta": {
+      "title": "Sampler Cfg "
+    }
+  },
+  "79": {
+    "inputs": {
+      "int": 10
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Sampler Steps"
+    }
+  },
+  "80": {
+    "inputs": {
+      "value": 0.65
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "LCM Lora Strength"
+    }
+  },
+  "81": {
+    "inputs": {
+      "vae_name": "klF8Anime2VAE_klF8Anime2VAE.safetensors"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Optional VAE"
+    }
+  },
+  "82": {
+    "inputs": {
+      "method": "mkl",
+      "image_ref": [
+        "36",
+        0
+      ],
+      "image_target": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "ColorMatch",
+    "_meta": {
+      "title": "Color Match"
+    }
+  },
+  "89": {
+    "inputs": {
+      "images": [
+        "90",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Before Color Correct"
+    }
+  },
+  "90": {
+    "inputs": {
+      "split_index": 5,
+      "images": [
+        "13",
+        0
+      ]
+    },
+    "class_type": "VHS_SplitImages",
+    "_meta": {
+      "title": "Preview Only 5 Images"
+    }
+  },
+  "96": {
+    "inputs": {
+      "images": [
+        "97",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "CN 2 Preview"
+    }
+  },
+  "97": {
+    "inputs": {
+      "split_index": 5,
+      "images": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "VHS_SplitImages",
+    "_meta": {
+      "title": " "
+    }
+  },
+  "98": {
+    "inputs": {
+      "images": [
+        "99",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "CN 1 Preview"
+    }
+  },
+  "99": {
+    "inputs": {
+      "split_index": 5,
+      "images": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "VHS_SplitImages",
+    "_meta": {
+      "title": " "
+    }
+  },
+  "102": {
+    "inputs": {
+      "images": [
+        "103",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Raw Images"
+    }
+  },
+  "103": {
+    "inputs": {
+      "split_index": 5,
+      "images": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "VHS_SplitImages",
+    "_meta": {
+      "title": " "
+    }
+  },
+  "104": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "Inject Additional Refiner Noise"
+    }
+  },
+  "105": {
+    "inputs": {
+      "strength": [
+        "104",
+        0
+      ],
+      "latents": [
+        "11",
+        0
+      ]
+    },
+    "class_type": "BNK_InjectNoise",
+    "_meta": {
+      "title": "Inject Noise"
+    }
+  },
+  "108": {
+    "inputs": {
+      "add_noise": "enable",
+      "noise_seed": [
+        "55",
+        0
+      ],
+      "steps": [
+        "79",
+        0
+      ],
+      "cfg": [
+        "78",
+        0
+      ],
+      "sampler_name": "lcm",
+      "scheduler": "normal",
+      "start_at_step": [
+        "140",
+        0
+      ],
+      "end_at_step": [
+        "140",
+        0
+      ],
+      "return_with_leftover_noise": "disable",
+      "model": [
+        "126",
+        0
+      ],
+      "positive": [
+        "161",
+        0
+      ],
+      "negative": [
+        "161",
+        1
+      ],
+      "latent_image": [
+        "105",
+        0
+      ]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": {
+      "title": "KSampler (Advanced)"
+    }
+  },
+  "109": {
+    "inputs": {
+      "add_noise": "enable",
+      "noise_seed": [
+        "55",
+        0
+      ],
+      "steps": [
+        "79",
+        0
+      ],
+      "cfg": [
+        "78",
+        0
+      ],
+      "sampler_name": "lcm",
+      "scheduler": "normal",
+      "start_at_step": [
+        "140",
+        0
+      ],
+      "end_at_step": 999,
+      "return_with_leftover_noise": "disable",
+      "model": [
+        "126",
+        0
+      ],
+      "positive": [
+        "161",
+        0
+      ],
+      "negative": [
+        "161",
+        1
+      ],
+      "latent_image": [
+        "111",
+        0
+      ]
+    },
+    "class_type": "KSamplerAdvanced",
+    "_meta": {
+      "title": "KSampler (Advanced)"
+    }
+  },
+  "111": {
+    "inputs": {
+      "strength": 1,
+      "latents": [
+        "108",
+        0
+      ]
+    },
+    "class_type": "BNK_InjectNoise",
+    "_meta": {
+      "title": "Inject Noise"
+    }
+  },
+  "124": {
+    "inputs": {
+      "switch_1": "On",
+      "lora_name_1": "skinslider_last.safetensors",
+      "model_weight_1": -1,
+      "clip_weight_1": 1,
+      "switch_2": "On",
+      "lora_name_2": "add_saturation.safetensors",
+      "model_weight_2": 0.68,
+      "clip_weight_2": 1,
+      "switch_3": "On",
+      "lora_name_3": "None",
+      "model_weight_3": 0.25,
+      "clip_weight_3": 1
+    },
+    "class_type": "CR LoRA Stack",
+    "_meta": {
+      "title": "[Optional] CR LoRA Stack"
+    }
+  },
+  "126": {
+    "inputs": {
+      "tonemap_multiplier": [
+        "127",
+        0
+      ],
+      "rescale_multiplier": 1,
+      "model": [
+        "77",
+        0
+      ]
+    },
+    "class_type": "TonemapNoiseWithRescaleCFG",
+    "_meta": {
+      "title": "TonemapNoiseWithRescaleCFG"
+    }
+  },
+  "127": {
+    "inputs": {
+      "float": 1
+    },
+    "class_type": "Cfg Literal",
+    "_meta": {
+      "title": "Details Enhancer"
+    }
+  },
+  "128": {
+    "inputs": {
+      "int": 1
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "AD - Macro Motion"
+    }
+  },
+  "131": {
+    "inputs": {
+      "motion_pe_stretch": [
+        "128",
+        0
+      ],
+      "min_motion_scale": 100,
+      "max_motion_scale": 100
+    },
+    "class_type": "ADE_AnimateDiffModelSettingsSimple",
+    "_meta": {
+      "title": "🚫[DEPR] Motion Model Settings (Simple) 🎭🅐🅓①"
+    }
+  },
+  "134": {
+    "inputs": {
+      "value": 0.8
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "CN 1 Strength"
+    }
+  },
+  "135": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "CN 1 Start Percent"
+    }
+  },
+  "136": {
+    "inputs": {
+      "value": 0.8
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "CN 1 End Percent"
+    }
+  },
+  "137": {
+    "inputs": {
+      "value": 0.8
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "CN 2 Strength"
+    }
+  },
+  "138": {
+    "inputs": {
+      "value": 0
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "CN 2 Start Percent"
+    }
+  },
+  "139": {
+    "inputs": {
+      "value": 0.8
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "CN 2 End Percent"
+    }
+  },
+  "140": {
+    "inputs": {
+      "int": 6
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Start Refiner from nth Step"
+    }
+  },
+  "151": {
+    "inputs": {
+      "expression": "a+b",
+      "a": [
+        "153",
+        0
+      ],
+      "b": [
+        "154",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "A+B"
+    }
+  },
+  "153": {
+    "inputs": {
+      "int": 120
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Batch Range"
+    }
+  },
+  "154": {
+    "inputs": {
+      "int": 0
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Overlapping Frames"
+    }
+  },
+  "160": {
+    "inputs": {
+      "strength": [
+        "134",
+        0
+      ],
+      "start_percent": [
+        "135",
+        0
+      ],
+      "end_percent": [
+        "136",
+        0
+      ],
+      "positive": [
+        "3",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ],
+      "control_net": [
+        "15",
+        0
+      ],
+      "image": [
+        "17",
+        0
+      ]
+    },
+    "class_type": "ACN_AdvancedControlNetApply",
+    "_meta": {
+      "title": "ControlNet 1"
+    }
+  },
+  "161": {
+    "inputs": {
+      "strength": [
+        "137",
+        0
+      ],
+      "start_percent": [
+        "138",
+        0
+      ],
+      "end_percent": [
+        "139",
+        0
+      ],
+      "positive": [
+        "160",
+        0
+      ],
+      "negative": [
+        "160",
+        1
+      ],
+      "control_net": [
+        "19",
+        0
+      ],
+      "image": [
+        "20",
+        0
+      ]
+    },
+    "class_type": "ACN_AdvancedControlNetApply",
+    "_meta": {
+      "title": "ControlNet 2"
+    }
+  },
+  "169": {
+    "inputs": {
+      "string": "/root/workspace/out"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Base Path"
+    }
+  },
+  "170": {
+    "inputs": {
+      "string": "/"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Delimiter"
+    }
+  },
+  "171": {
+    "inputs": {
+      "string1": [
+        "169",
+        0
+      ],
+      "string2": [
+        "172",
+        0
+      ],
+      "delimiter": [
+        "170",
+        0
+      ]
+    },
+    "class_type": "JoinStrings",
+    "_meta": {
+      "title": "Join Strings"
+    }
+  },
+  "172": {
+    "inputs": {
+      "string": "Renders/Refined"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Out Path"
+    }
+  },
+  "175": {
+    "inputs": {
+      "string1": [
+        "169",
+        0
+      ],
+      "string2": [
+        "176",
+        0
+      ],
+      "delimiter": [
+        "170",
+        0
+      ]
+    },
+    "class_type": "JoinStrings",
+    "_meta": {
+      "title": "Join Strings"
+    }
+  },
+  "176": {
+    "inputs": {
+      "string": "Renders/Raw"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Raw Image"
+    }
+  },
+  "179": {
+    "inputs": {
+      "string1": [
+        "169",
+        0
+      ],
+      "string2": [
+        "180",
+        0
+      ],
+      "delimiter": [
+        "170",
+        0
+      ]
+    },
+    "class_type": "JoinStrings",
+    "_meta": {
+      "title": "Join Strings"
+    }
+  },
+  "180": {
+    "inputs": {
+      "string": "Softedge"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Softedge"
+    }
+  },
+  "183": {
+    "inputs": {
+      "string1": [
+        "169",
+        0
+      ],
+      "string2": [
+        "184",
+        0
+      ],
+      "delimiter": [
+        "170",
+        0
+      ]
+    },
+    "class_type": "JoinStrings",
+    "_meta": {
+      "title": "Join Strings"
+    }
+  },
+  "184": {
+    "inputs": {
+      "string": "OpenPose"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "OpenPose"
+    }
+  }
+}

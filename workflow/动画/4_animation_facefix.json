@@ -1,0 +1,786 @@
+{
+  "1": {
+    "inputs": {
+      "ckpt_name": "imp_v10.safetensors"
+    },
+    "class_type": "CheckpointLoaderSimple",
+    "_meta": {
+      "title": "Load AD Checkpoint"
+    }
+  },
+  "3": {
+    "inputs": {
+      "text": [
+        "4",
+        0
+      ],
+      "parser": "comfy",
+      "mean_normalization": true,
+      "multi_conditioning": true,
+      "use_old_emphasis_implementation": false,
+      "with_SDXL": false,
+      "ascore": 6,
+      "width": 1024,
+      "height": 1024,
+      "crop_w": 0,
+      "crop_h": 0,
+      "target_width": 1024,
+      "target_height": 1024,
+      "text_g": "",
+      "text_l": "",
+      "smZ_steps": 1,
+      "clip": [
+        "14",
+        1
+      ]
+    },
+    "class_type": "smZ CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode++"
+    }
+  },
+  "4": {
+    "inputs": {
+      "text": "masterpiece, beautiful, aesthetic, sharp details, focused , hd, 8k , 4k , sharp, highly detailed,"
+    },
+    "class_type": "Text Multiline",
+    "_meta": {
+      "title": "Positive Prompts for Face "
+    }
+  },
+  "5": {
+    "inputs": {
+      "text": "ugly, deformed, bad lighting, blurry, text, watermark, extra hands, bad quality, deformed hands, deformed fingers, nostalgic, drawing, painting, bad anatomy, worst quality, blurry, blurred, normal quality, bad focus, tripod, three legs, weird legs, short legs, bag, handbag, 3 hands, 4 hands, three hands\n\n(embedding:BadDream:1) boy, man, male,\n(embedding:ng_deepnegative_v1_75t:1), \n(embedding:epiCNegative:1), \n(embedding:bad-picture-chill-75v:1), \n(embedding:AS-YoungV2-neg:1), \n(embedding:ERA09NEGV2:1) "
+    },
+    "class_type": "Text Multiline",
+    "_meta": {
+      "title": "Negative Prompts for Face"
+    }
+  },
+  "6": {
+    "inputs": {
+      "text": [
+        "5",
+        0
+      ],
+      "parser": "comfy",
+      "mean_normalization": true,
+      "multi_conditioning": false,
+      "use_old_emphasis_implementation": false,
+      "with_SDXL": false,
+      "ascore": 6,
+      "width": 1024,
+      "height": 1024,
+      "crop_w": 0,
+      "crop_h": 0,
+      "target_width": 1024,
+      "target_height": 1024,
+      "text_g": "",
+      "text_l": "",
+      "smZ_steps": 1,
+      "clip": [
+        "14",
+        1
+      ]
+    },
+    "class_type": "smZ CLIPTextEncode",
+    "_meta": {
+      "title": "CLIP Text Encode++"
+    }
+  },
+  "10": {
+    "inputs": {
+      "switch_1": "On",
+      "lora_name_1": "skinslider_last.safetensors",
+      "model_weight_1": -1,
+      "clip_weight_1": 1,
+      "switch_2": "On",
+      "lora_name_2": "add_saturation.safetensors",
+      "model_weight_2": 0.68,
+      "clip_weight_2": 1,
+      "switch_3": "Off",
+      "lora_name_3": "None",
+      "model_weight_3": 0.42,
+      "clip_weight_3": 1
+    },
+    "class_type": "CR LoRA Stack",
+    "_meta": {
+      "title": "LoRA Stack"
+    }
+  },
+  "14": {
+    "inputs": {
+      "model": [
+        "1",
+        0
+      ],
+      "clip": [
+        "1",
+        1
+      ],
+      "lora_stack": [
+        "10",
+        0
+      ]
+    },
+    "class_type": "CR Apply LoRA Stack",
+    "_meta": {
+      "title": "💊 CR Apply LoRA Stack"
+    }
+  },
+  "21": {
+    "inputs": {
+      "directory": [
+        "97",
+        0
+      ],
+      "image_load_cap": 120,
+      "start_index": 0
+    },
+    "class_type": "LoadImagesFromDirectory",
+    "_meta": {
+      "title": "Input Refined Images"
+    }
+  },
+  "24": {
+    "inputs": {
+      "value": 0.48
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "Face Fix Denoise"
+    }
+  },
+  "27": {
+    "inputs": {
+      "method": "mkl",
+      "image_ref": [
+        "36",
+        0
+      ],
+      "image_target": [
+        "56",
+        0
+      ]
+    },
+    "class_type": "ColorMatch",
+    "_meta": {
+      "title": "Color Match"
+    }
+  },
+  "28": {
+    "inputs": {
+      "images": [
+        "68",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Output Image"
+    }
+  },
+  "29": {
+    "inputs": {
+      "output_path": [
+        "94",
+        0
+      ],
+      "filename_prefix": [
+        "84",
+        0
+      ],
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "quality": 100,
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "true",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "36": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "scale_by": [
+        "39",
+        0
+      ],
+      "image": [
+        "21",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "Downscale Image"
+    }
+  },
+  "39": {
+    "inputs": {
+      "value": 1
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "[Optional] Upscale/Downscale"
+    }
+  },
+  "40": {
+    "inputs": {
+      "int_": [
+        "42",
+        1
+      ]
+    },
+    "class_type": "CR Integer To String",
+    "_meta": {
+      "title": "🔧 CR Integer To String"
+    }
+  },
+  "42": {
+    "inputs": {
+      "image": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "GetImageSize"
+    }
+  },
+  "43": {
+    "inputs": {
+      "int_": [
+        "42",
+        0
+      ]
+    },
+    "class_type": "CR Integer To String",
+    "_meta": {
+      "title": "🔧 CR Integer To String"
+    }
+  },
+  "45": {
+    "inputs": {
+      "images": [
+        "67",
+        0
+      ]
+    },
+    "class_type": "PreviewImage",
+    "_meta": {
+      "title": "Original Image"
+    }
+  },
+  "48": {
+    "inputs": {
+      "text": [
+        "43",
+        0
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Width Input Check"
+    }
+  },
+  "49": {
+    "inputs": {
+      "text": [
+        "40",
+        0
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Height Input Check"
+    }
+  },
+  "50": {
+    "inputs": {
+      "context_length": 16,
+      "context_stride": 1,
+      "context_overlap": 4,
+      "context_schedule": "uniform",
+      "closed_loop": true,
+      "fuse_method": "flat",
+      "use_on_equal_length": false,
+      "start_percent": 0,
+      "guarantee_steps": 1
+    },
+    "class_type": "ADE_AnimateDiffUniformContextOptions",
+    "_meta": {
+      "title": "Context Options◆Looped Uniform 🎭🅐🅓"
+    }
+  },
+  "51": {
+    "inputs": {
+      "model_name": "temporaldiff-v1-animatediff.safetensors",
+      "beta_schedule": "sqrt_linear (AnimateDiff)",
+      "motion_scale": 1,
+      "apply_v2_models_properly": false,
+      "model": [
+        "14",
+        0
+      ],
+      "context_options": [
+        "50",
+        0
+      ]
+    },
+    "class_type": "ADE_AnimateDiffLoaderWithContext",
+    "_meta": {
+      "title": "AnimateDiff Loader [Legacy] 🎭🅐🅓①"
+    }
+  },
+  "55": {
+    "inputs": {
+      "guide_size": 256,
+      "guide_size_for": true,
+      "max_size": 768,
+      "seed": 615841318308138,
+      "steps": [
+        "74",
+        0
+      ],
+      "cfg": [
+        "73",
+        0
+      ],
+      "sampler_name": "euler_ancestral",
+      "scheduler": "ddim_uniform",
+      "denoise": [
+        "24",
+        0
+      ],
+      "refiner_ratio": [
+        "88",
+        0
+      ],
+      "image_frames": [
+        "36",
+        0
+      ],
+      "segs": [
+        "57",
+        0
+      ],
+      "basic_pipe": [
+        "60",
+        0
+      ],
+      "refiner_basic_pipe_opt": [
+        "60",
+        0
+      ]
+    },
+    "class_type": "SEGSDetailerForAnimateDiff",
+    "_meta": {
+      "title": "SEGSDetailer For AnimateDiff (SEGS/pipe)"
+    }
+  },
+  "56": {
+    "inputs": {
+      "feather": 5,
+      "alpha": 255,
+      "image": [
+        "36",
+        0
+      ],
+      "segs": [
+        "55",
+        0
+      ]
+    },
+    "class_type": "SEGSPaste",
+    "_meta": {
+      "title": "SEGSPaste"
+    }
+  },
+  "57": {
+    "inputs": {
+      "bbox_threshold": 0.5,
+      "bbox_dilation": 10,
+      "crop_factor": 2.5,
+      "drop_size": 50,
+      "sub_threshold": 0.5,
+      "sub_dilation": 10,
+      "sub_bbox_expansion": 0,
+      "sam_mask_hint_threshold": 0.5,
+      "masking_mode": "Pivot SEGS",
+      "segs_pivot": "Combined mask",
+      "bbox_detector": [
+        "58",
+        0
+      ],
+      "image_frames": [
+        "36",
+        0
+      ],
+      "sam_model_opt": [
+        "59",
+        0
+      ]
+    },
+    "class_type": "ImpactSimpleDetectorSEGS_for_AD",
+    "_meta": {
+      "title": "Simple Detector for AnimateDiff (SEGS)"
+    }
+  },
+  "58": {
+    "inputs": {
+      "model_name": "bbox/face_yolov8m.pt"
+    },
+    "class_type": "UltralyticsDetectorProvider",
+    "_meta": {
+      "title": "UltralyticsDetectorProvider"
+    }
+  },
+  "59": {
+    "inputs": {
+      "model_name": "sam_vit_b_01ec64.pth",
+      "device_mode": "AUTO"
+    },
+    "class_type": "SAMLoader",
+    "_meta": {
+      "title": "SAMLoader (Impact)"
+    }
+  },
+  "60": {
+    "inputs": {
+      "model": [
+        "72",
+        0
+      ],
+      "clip": [
+        "71",
+        1
+      ],
+      "vae": [
+        "1",
+        2
+      ],
+      "positive": [
+        "3",
+        0
+      ],
+      "negative": [
+        "6",
+        0
+      ]
+    },
+    "class_type": "ToBasicPipe",
+    "_meta": {
+      "title": "ToBasicPipe"
+    }
+  },
+  "67": {
+    "inputs": {
+      "split_index": 5,
+      "images": [
+        "36",
+        0
+      ]
+    },
+    "class_type": "VHS_SplitImages",
+    "_meta": {
+      "title": "Preview Only 5 Images"
+    }
+  },
+  "68": {
+    "inputs": {
+      "split_index": 5,
+      "images": [
+        "27",
+        0
+      ]
+    },
+    "class_type": "VHS_SplitImages",
+    "_meta": {
+      "title": "Preview Only 5 Images"
+    }
+  },
+  "71": {
+    "inputs": {
+      "lora_name": "LCM_LoRA_Weights_SD15.safetensors",
+      "strength_model": [
+        "75",
+        0
+      ],
+      "strength_clip": 1,
+      "model": [
+        "51",
+        0
+      ],
+      "clip": [
+        "14",
+        1
+      ]
+    },
+    "class_type": "LoraLoader",
+    "_meta": {
+      "title": "Load LCM LoRA"
+    }
+  },
+  "72": {
+    "inputs": {
+      "sampling": "lcm",
+      "zsnr": false,
+      "model": [
+        "71",
+        0
+      ]
+    },
+    "class_type": "ModelSamplingDiscrete",
+    "_meta": {
+      "title": "ModelSamplingDiscrete"
+    }
+  },
+  "73": {
+    "inputs": {
+      "float": 4
+    },
+    "class_type": "Cfg Literal",
+    "_meta": {
+      "title": "Sampler Cfg "
+    }
+  },
+  "74": {
+    "inputs": {
+      "int": 8
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Sampler Steps"
+    }
+  },
+  "75": {
+    "inputs": {
+      "value": 0.65
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "LCM Lora Strength"
+    }
+  },
+  "79": {
+    "inputs": {
+      "vae_name": "vae-ft-mse-840000-ema-pruned.ckpt"
+    },
+    "class_type": "VAELoader",
+    "_meta": {
+      "title": "Optional VAE"
+    }
+  },
+  "83": {
+    "inputs": {
+      "text": "Batch_",
+      "text_b": "",
+      "text_c": "_Face_Fix",
+      "text_d": ""
+    },
+    "class_type": "Text String",
+    "_meta": {
+      "title": "Name"
+    }
+  },
+  "84": {
+    "inputs": {
+      "delimiter": "",
+      "clean_whitespace": "true",
+      "text_a": [
+        "83",
+        0
+      ],
+      "text_b": [
+        "86",
+        0
+      ],
+      "text_c": [
+        "83",
+        2
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "85": {
+    "inputs": {
+      "int": 1
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Batch Number Naming"
+    }
+  },
+  "86": {
+    "inputs": {
+      "int_": [
+        "85",
+        0
+      ]
+    },
+    "class_type": "CR Integer To String",
+    "_meta": {
+      "title": "🔧 CR Integer To String"
+    }
+  },
+  "88": {
+    "inputs": {
+      "value": 0.4
+    },
+    "class_type": "FloatConstant",
+    "_meta": {
+      "title": "Refiner Denoise"
+    }
+  },
+  "92": {
+    "inputs": {
+      "string": "/root/workspace/out"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Base Path"
+    }
+  },
+  "93": {
+    "inputs": {
+      "string": "/"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Delimiter"
+    }
+  },
+  "94": {
+    "inputs": {
+      "string1": [
+        "92",
+        0
+      ],
+      "string2": [
+        "95",
+        0
+      ],
+      "delimiter": [
+        "93",
+        0
+      ]
+    },
+    "class_type": "JoinStrings",
+    "_meta": {
+      "title": "Join Strings"
+    }
+  },
+  "95": {
+    "inputs": {
+      "string": "Renders/FaceFix"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Out Path"
+    }
+  },
+  "97": {
+    "inputs": {
+      "string1": [
+        "92",
+        0
+      ],
+      "string2": [
+        "98",
+        0
+      ],
+      "delimiter": [
+        "93",
+        0
+      ]
+    },
+    "class_type": "JoinStrings",
+    "_meta": {
+      "title": "Join Strings"
+    }
+  },
+  "98": {
+    "inputs": {
+      "string": "Renders/Refined"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Refined Image"
+    }
+  },
+  "100": {
+    "inputs": {
+      "string1": [
+        "92",
+        0
+      ],
+      "string2": [
+        "101",
+        0
+      ],
+      "delimiter": [
+        "93",
+        0
+      ]
+    },
+    "class_type": "JoinStrings",
+    "_meta": {
+      "title": "Join Strings"
+    }
+  },
+  "101": {
+    "inputs": {
+      "string": "Softedge"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Softedge"
+    }
+  },
+  "103": {
+    "inputs": {
+      "string1": [
+        "92",
+        0
+      ],
+      "string2": [
+        "104",
+        0
+      ],
+      "delimiter": [
+        "93",
+        0
+      ]
+    },
+    "class_type": "JoinStrings",
+    "_meta": {
+      "title": "Join Strings"
+    }
+  },
+  "104": {
+    "inputs": {
+      "string": "OpenPose"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "OpenPose"
+    }
+  }
+}

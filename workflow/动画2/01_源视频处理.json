@@ -1,0 +1,1780 @@
+{
+  "29": {
+    "inputs": {
+      "safe": "enable",
+      "resolution": 1024,
+      "image": [
+        "107",
+        0
+      ]
+    },
+    "class_type": "HEDPreprocessor",
+    "_meta": {
+      "title": "HED Soft-Edge Lines"
+    }
+  },
+  "34": {
+    "inputs": {
+      "coarse": "disable",
+      "resolution": 512,
+      "image": [
+        "137",
+        0
+      ]
+    },
+    "class_type": "LineArtPreprocessor",
+    "_meta": {
+      "title": "Realistic Lineart"
+    }
+  },
+  "35": {
+    "inputs": {
+      "low_threshold": [
+        "486",
+        0
+      ],
+      "high_threshold": [
+        "485",
+        0
+      ],
+      "resolution": [
+        "484",
+        0
+      ],
+      "image": [
+        "135",
+        0
+      ]
+    },
+    "class_type": "CannyEdgePreprocessor",
+    "_meta": {
+      "title": "Canny Edge"
+    }
+  },
+  "53": {
+    "inputs": {
+      "resolution": 512,
+      "image": [
+        "424",
+        0
+      ]
+    },
+    "class_type": "BAE-NormalMapPreprocessor",
+    "_meta": {
+      "title": "BAE Normal Map"
+    }
+  },
+  "62": {
+    "inputs": {
+      "text": [
+        "109",
+        0
+      ],
+      "text_b": "Softedge",
+      "text_c": "trash",
+      "text_d": ""
+    },
+    "class_type": "Text String",
+    "_meta": {
+      "title": "Text String"
+    }
+  },
+  "76": {
+    "inputs": {
+      "delimiter": [
+        "606",
+        0
+      ],
+      "clean_whitespace": "true",
+      "text_a": [
+        "62",
+        0
+      ],
+      "text_b": [
+        "239",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "96": {
+    "inputs": {
+      "width": 128,
+      "height": 128,
+      "batch_size": 1,
+      "color": 0
+    },
+    "class_type": "EmptyImage",
+    "_meta": {
+      "title": "Trash Image"
+    }
+  },
+  "107": {
+    "inputs": {
+      "ANY": [
+        "631",
+        0
+      ],
+      "IF_TRUE": [
+        "333",
+        0
+      ],
+      "IF_FALSE": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "109": {
+    "inputs": {
+      "string": "/root/workspace/d01"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Output Path - Passes"
+    }
+  },
+  "121": {
+    "inputs": {
+      "text": [
+        "109",
+        0
+      ],
+      "text_b": "Canny",
+      "text_c": "trash",
+      "text_d": ""
+    },
+    "class_type": "Text String",
+    "_meta": {
+      "title": "Text String"
+    }
+  },
+  "122": {
+    "inputs": {
+      "text": [
+        "109",
+        0
+      ],
+      "text_b": "LineArt",
+      "text_c": "trash",
+      "text_d": ""
+    },
+    "class_type": "Text String",
+    "_meta": {
+      "title": "Text String"
+    }
+  },
+  "123": {
+    "inputs": {
+      "text": [
+        "109",
+        0
+      ],
+      "text_b": "Depth",
+      "text_c": "trash",
+      "text_d": ""
+    },
+    "class_type": "Text String",
+    "_meta": {
+      "title": "Text String"
+    }
+  },
+  "124": {
+    "inputs": {
+      "text": [
+        "109",
+        0
+      ],
+      "text_b": "Normal",
+      "text_c": "trash",
+      "text_d": ""
+    },
+    "class_type": "Text String",
+    "_meta": {
+      "title": "Text String"
+    }
+  },
+  "125": {
+    "inputs": {
+      "text": [
+        "109",
+        0
+      ],
+      "text_b": "OpenPose",
+      "text_c": "trash",
+      "text_d": ""
+    },
+    "class_type": "Text String",
+    "_meta": {
+      "title": "Text String"
+    }
+  },
+  "126": {
+    "inputs": {
+      "delimiter": [
+        "606",
+        0
+      ],
+      "clean_whitespace": "true",
+      "text_a": [
+        "121",
+        0
+      ],
+      "text_b": [
+        "240",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "127": {
+    "inputs": {
+      "delimiter": [
+        "606",
+        0
+      ],
+      "clean_whitespace": "true",
+      "text_a": [
+        "122",
+        0
+      ],
+      "text_b": [
+        "241",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "128": {
+    "inputs": {
+      "delimiter": [
+        "606",
+        0
+      ],
+      "clean_whitespace": "true",
+      "text_a": [
+        "123",
+        0
+      ],
+      "text_b": [
+        "243",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "129": {
+    "inputs": {
+      "delimiter": [
+        "606",
+        0
+      ],
+      "clean_whitespace": "true",
+      "text_a": [
+        "124",
+        0
+      ],
+      "text_b": [
+        "244",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "130": {
+    "inputs": {
+      "delimiter": [
+        "606",
+        0
+      ],
+      "clean_whitespace": "true",
+      "text_a": [
+        "125",
+        0
+      ],
+      "text_b": [
+        "242",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "131": {
+    "inputs": {
+      "detect_hand": "enable",
+      "detect_body": "enable",
+      "detect_face": "enable",
+      "resolution": [
+        "250",
+        0
+      ],
+      "bbox_detector": "yolox_l.onnx",
+      "pose_estimator": "dw-ll_ucoco_384.onnx",
+      "image": [
+        "139",
+        0
+      ]
+    },
+    "class_type": "DWPreprocessor",
+    "_meta": {
+      "title": "DWPose Estimator"
+    }
+  },
+  "135": {
+    "inputs": {
+      "ANY": [
+        "635",
+        0
+      ],
+      "IF_TRUE": [
+        "333",
+        0
+      ],
+      "IF_FALSE": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "137": {
+    "inputs": {
+      "ANY": [
+        "633",
+        0
+      ],
+      "IF_TRUE": [
+        "333",
+        0
+      ],
+      "IF_FALSE": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "139": {
+    "inputs": {
+      "ANY": [
+        "629",
+        0
+      ],
+      "IF_TRUE": [
+        "333",
+        0
+      ],
+      "IF_FALSE": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "141": {
+    "inputs": {
+      "ANY": [
+        "644",
+        0
+      ],
+      "IF_TRUE": [
+        "333",
+        0
+      ],
+      "IF_FALSE": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "143": {
+    "inputs": {
+      "ANY": [
+        "637",
+        0
+      ],
+      "IF_TRUE": [
+        "333",
+        0
+      ],
+      "IF_FALSE": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "191": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "scale_by": 1,
+      "image": [
+        "586",
+        0
+      ]
+    },
+    "class_type": "ImageScaleBy",
+    "_meta": {
+      "title": "Upscale Image By"
+    }
+  },
+  "195": {
+    "inputs": {
+      "text": [
+        "109",
+        0
+      ],
+      "text_b": "Frames",
+      "text_c": "trash",
+      "text_d": ""
+    },
+    "class_type": "Text String",
+    "_meta": {
+      "title": "Text String"
+    }
+  },
+  "196": {
+    "inputs": {
+      "ANY": [
+        "646",
+        0
+      ],
+      "IF_TRUE": [
+        "333",
+        0
+      ],
+      "IF_FALSE": [
+        "96",
+        0
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "227": {
+    "inputs": {
+      "ANY": [
+        "646",
+        0
+      ],
+      "IF_TRUE": [
+        "195",
+        1
+      ],
+      "IF_FALSE": [
+        "195",
+        2
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "239": {
+    "inputs": {
+      "ANY": [
+        "631",
+        0
+      ],
+      "IF_TRUE": [
+        "62",
+        1
+      ],
+      "IF_FALSE": [
+        "62",
+        2
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If Trash"
+    }
+  },
+  "240": {
+    "inputs": {
+      "ANY": [
+        "635",
+        0
+      ],
+      "IF_TRUE": [
+        "121",
+        1
+      ],
+      "IF_FALSE": [
+        "121",
+        2
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "241": {
+    "inputs": {
+      "ANY": [
+        "633",
+        0
+      ],
+      "IF_TRUE": [
+        "122",
+        1
+      ],
+      "IF_FALSE": [
+        "122",
+        2
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "242": {
+    "inputs": {
+      "ANY": [
+        "629",
+        0
+      ],
+      "IF_TRUE": [
+        "125",
+        1
+      ],
+      "IF_FALSE": [
+        "125",
+        2
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "243": {
+    "inputs": {
+      "ANY": [
+        "644",
+        0
+      ],
+      "IF_TRUE": [
+        "123",
+        1
+      ],
+      "IF_FALSE": [
+        "123",
+        2
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "244": {
+    "inputs": {
+      "ANY": [
+        "637",
+        0
+      ],
+      "IF_TRUE": [
+        "124",
+        1
+      ],
+      "IF_FALSE": [
+        "124",
+        2
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "250": {
+    "inputs": {
+      "image_gen_width": [
+        "251",
+        0
+      ],
+      "image_gen_height": [
+        "251",
+        1
+      ],
+      "resize_mode": "Just Resize",
+      "original_image": [
+        "139",
+        0
+      ]
+    },
+    "class_type": "PixelPerfectResolution",
+    "_meta": {
+      "title": "Pixel Perfect Resolution"
+    }
+  },
+  "251": {
+    "inputs": {
+      "image": [
+        "139",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "GetImageSize"
+    }
+  },
+  "327": {
+    "inputs": {
+      "delimiter": [
+        "606",
+        0
+      ],
+      "clean_whitespace": "true",
+      "text_a": [
+        "195",
+        0
+      ],
+      "text_b": [
+        "227",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "333": {
+    "inputs": {
+      "upscale_method": "nearest-exact",
+      "width": [
+        "335",
+        0
+      ],
+      "height": [
+        "334",
+        0
+      ],
+      "crop": "disabled",
+      "image": [
+        "499",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "Upscale Image"
+    }
+  },
+  "334": {
+    "inputs": {
+      "ANY": [
+        "336",
+        0
+      ],
+      "IF_TRUE": [
+        "339",
+        0
+      ],
+      "IF_FALSE": [
+        "337",
+        1
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "335": {
+    "inputs": {
+      "ANY": [
+        "336",
+        0
+      ],
+      "IF_TRUE": [
+        "338",
+        0
+      ],
+      "IF_FALSE": [
+        "337",
+        0
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "336": {
+    "inputs": {
+      "boolean": 0
+    },
+    "class_type": "Logic Boolean",
+    "_meta": {
+      "title": "Enable Custom Resolution"
+    }
+  },
+  "337": {
+    "inputs": {
+      "image": [
+        "499",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "GetImageSize"
+    }
+  },
+  "338": {
+    "inputs": {
+      "Number": 480
+    },
+    "class_type": "Int",
+    "_meta": {
+      "title": "Width"
+    }
+  },
+  "339": {
+    "inputs": {
+      "Number": 856
+    },
+    "class_type": "Int",
+    "_meta": {
+      "title": "Height"
+    }
+  },
+  "385": {
+    "inputs": {
+      "width": 128,
+      "height": 128,
+      "batch_size": 1,
+      "color": 0
+    },
+    "class_type": "EmptyImage",
+    "_meta": {
+      "title": "Trash Image"
+    }
+  },
+  "387": {
+    "inputs": {
+      "backbone": "resnet50",
+      "fp16": true,
+      "bg_color": "black",
+      "batch_size": 50,
+      "video_frames": [
+        "556",
+        0
+      ]
+    },
+    "class_type": "Robust Video Matting",
+    "_meta": {
+      "title": "Robust Video Matting"
+    }
+  },
+  "388": {
+    "inputs": {
+      "mask": [
+        "410",
+        0
+      ]
+    },
+    "class_type": "MaskToImage",
+    "_meta": {
+      "title": "Convert Mask to Image"
+    }
+  },
+  "390": {
+    "inputs": {
+      "text": [
+        "109",
+        0
+      ],
+      "text_b": "Mask",
+      "text_c": "trash",
+      "text_d": ""
+    },
+    "class_type": "Text String",
+    "_meta": {
+      "title": "Text String"
+    }
+  },
+  "391": {
+    "inputs": {
+      "delimiter": [
+        "606",
+        0
+      ],
+      "clean_whitespace": "true",
+      "text_a": [
+        "390",
+        0
+      ],
+      "text_b": [
+        "392",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "392": {
+    "inputs": {
+      "ANY": [
+        "639",
+        0
+      ],
+      "IF_TRUE": [
+        "390",
+        1
+      ],
+      "IF_FALSE": [
+        "390",
+        2
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "395": {
+    "inputs": {
+      "ANY": [
+        "639",
+        0
+      ],
+      "IF_TRUE": [
+        "333",
+        0
+      ],
+      "IF_FALSE": [
+        "397",
+        0
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If"
+    }
+  },
+  "396": {
+    "inputs": {
+      "image": [
+        "333",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "GetImageSizeForTrash"
+    }
+  },
+  "397": {
+    "inputs": {
+      "width": [
+        "396",
+        0
+      ],
+      "height": [
+        "396",
+        1
+      ],
+      "batch_size": 1,
+      "color": 0
+    },
+    "class_type": "EmptyImage",
+    "_meta": {
+      "title": "Trash Image Mask"
+    }
+  },
+  "398": {
+    "inputs": {
+      "radius": [
+        "408",
+        0
+      ],
+      "strength": [
+        "407",
+        0
+      ],
+      "color_output": "false",
+      "neutral_background": "false",
+      "images": [
+        "557",
+        0
+      ]
+    },
+    "class_type": "Image High Pass Filter",
+    "_meta": {
+      "title": "Image High Pass Filter"
+    }
+  },
+  "399": {
+    "inputs": {
+      "saturation": 0,
+      "contrast": 2,
+      "brightness": 1,
+      "sharpness": 0,
+      "highpass_radius": 4.58,
+      "highpass_samples": 6,
+      "highpass_strength": 1,
+      "colorize": "false",
+      "image": [
+        "398",
+        0
+      ]
+    },
+    "class_type": "Image Dragan Photography Filter",
+    "_meta": {
+      "title": "Image Dragan Photography Filter"
+    }
+  },
+  "403": {
+    "inputs": {
+      "text": [
+        "109",
+        0
+      ],
+      "text_b": "SoftEdgePlus",
+      "text_c": "trash",
+      "text_d": ""
+    },
+    "class_type": "Text String",
+    "_meta": {
+      "title": "Text String"
+    }
+  },
+  "404": {
+    "inputs": {
+      "ANY": [
+        "642",
+        0
+      ],
+      "IF_TRUE": [
+        "403",
+        1
+      ],
+      "IF_FALSE": [
+        "403",
+        2
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If Save Source Png"
+    }
+  },
+  "406": {
+    "inputs": {
+      "ANY": [
+        "642",
+        0
+      ],
+      "IF_TRUE": [
+        "399",
+        0
+      ],
+      "IF_FALSE": [
+        "385",
+        0
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If "
+    }
+  },
+  "407": {
+    "inputs": {
+      "float": 7
+    },
+    "class_type": "Cfg Literal",
+    "_meta": {
+      "title": "SoftEdgePlus Strength"
+    }
+  },
+  "408": {
+    "inputs": {
+      "int": 2
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "SoftEdgePlus Radius"
+    }
+  },
+  "409": {
+    "inputs": {
+      "ANY": [
+        "642",
+        0
+      ],
+      "IF_TRUE": [
+        "333",
+        0
+      ],
+      "IF_FALSE": [
+        "385",
+        0
+      ]
+    },
+    "class_type": "If ANY execute A else B",
+    "_meta": {
+      "title": "If "
+    }
+  },
+  "410": {
+    "inputs": {
+      "expand": [
+        "457",
+        0
+      ],
+      "incremental_expandrate": 0,
+      "tapered_corners": true,
+      "flip_input": false,
+      "blur_radius": [
+        "464",
+        0
+      ],
+      "lerp_alpha": 1,
+      "decay_factor": 1,
+      "fill_holes": false,
+      "mask": [
+        "387",
+        1
+      ]
+    },
+    "class_type": "GrowMaskWithBlur",
+    "_meta": {
+      "title": "Grow Mask With Blur"
+    }
+  },
+  "422": {
+    "inputs": {
+      "delimiter": [
+        "606",
+        0
+      ],
+      "clean_whitespace": "true",
+      "text_a": [
+        "403",
+        0
+      ],
+      "text_b": [
+        "404",
+        0
+      ]
+    },
+    "class_type": "Text Concatenate",
+    "_meta": {
+      "title": "Text Concatenate"
+    }
+  },
+  "424": {
+    "inputs": {
+      "batch_size": 200,
+      "images": [
+        "143",
+        0
+      ]
+    },
+    "class_type": "RebatchImages",
+    "_meta": {
+      "title": "Rebatch Images"
+    }
+  },
+  "425": {
+    "inputs": {
+      "ckpt_name": "depth_anything_vitl14.pth",
+      "resolution": [
+        "475",
+        0
+      ],
+      "image": [
+        "141",
+        0
+      ]
+    },
+    "class_type": "DepthAnythingPreprocessor",
+    "_meta": {
+      "title": "Depth Anything Model"
+    }
+  },
+  "457": {
+    "inputs": {
+      "int": 2
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Mask Expansion"
+    }
+  },
+  "464": {
+    "inputs": {
+      "float": 5
+    },
+    "class_type": "Cfg Literal",
+    "_meta": {
+      "title": "Mask Blur"
+    }
+  },
+  "475": {
+    "inputs": {
+      "int": 1024
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Depth Resolution"
+    }
+  },
+  "484": {
+    "inputs": {
+      "int": 1024
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Canny Resolution"
+    }
+  },
+  "485": {
+    "inputs": {
+      "int": 200
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Canny High Threshold"
+    }
+  },
+  "486": {
+    "inputs": {
+      "int": 100
+    },
+    "class_type": "Int Literal",
+    "_meta": {
+      "title": "Canny Low Threshold"
+    }
+  },
+  "498": {
+    "inputs": {
+      "max_size": 2048,
+      "upscale": "false",
+      "image": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "FS: Fit Size From Image",
+    "_meta": {
+      "title": "Fit Image Size Limiter"
+    }
+  },
+  "499": {
+    "inputs": {
+      "upscale_method": "lanczos",
+      "width": [
+        "498",
+        0
+      ],
+      "height": [
+        "498",
+        1
+      ],
+      "crop": "disabled",
+      "image": [
+        "191",
+        0
+      ]
+    },
+    "class_type": "ImageScale",
+    "_meta": {
+      "title": "Upscale Image"
+    }
+  },
+  "540": {
+    "inputs": {
+      "text": [
+        "628",
+        0
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Output Width"
+    }
+  },
+  "541": {
+    "inputs": {
+      "text": [
+        "627",
+        0
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Output Height"
+    }
+  },
+  "556": {
+    "inputs": {
+      "batch_size": 50,
+      "images": [
+        "395",
+        0
+      ]
+    },
+    "class_type": "RebatchImages",
+    "_meta": {
+      "title": "Rebatch Images"
+    }
+  },
+  "557": {
+    "inputs": {
+      "batch_size": 50,
+      "images": [
+        "409",
+        0
+      ]
+    },
+    "class_type": "RebatchImages",
+    "_meta": {
+      "title": "Rebatch Images"
+    }
+  },
+  "560": {
+    "inputs": {
+      "image": [
+        "333",
+        0
+      ]
+    },
+    "class_type": "GetImageSize",
+    "_meta": {
+      "title": "GetImageSize"
+    }
+  },
+  "582": {
+    "inputs": {
+      "expression": "(((c/b)*a)*b) ",
+      "a": [
+        "585",
+        0
+      ],
+      "b": [
+        "583",
+        0
+      ],
+      "c": [
+        "583",
+        0
+      ]
+    },
+    "class_type": "MathExpression|pysssss",
+    "_meta": {
+      "title": "Math"
+    }
+  },
+  "583": {
+    "inputs": {
+      "seed": 120
+    },
+    "class_type": "Seed Generator",
+    "_meta": {
+      "title": "Batch Range"
+    }
+  },
+  "584": {
+    "inputs": {
+      "string": "/root/workspace/src/d01.mp4"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Input Video Path"
+    }
+  },
+  "585": {
+    "inputs": {
+      "seed": 0
+    },
+    "class_type": "Seed Generator",
+    "_meta": {
+      "title": "Lap Counter"
+    }
+  },
+  "586": {
+    "inputs": {
+      "video": [
+        "584",
+        0
+      ],
+      "force_rate": 0,
+      "force_size": "Disabled",
+      "custom_width": 512,
+      "custom_height": 512,
+      "frame_load_cap": [
+        "583",
+        0
+      ],
+      "skip_first_frames": [
+        "582",
+        0
+      ],
+      "select_every_nth": 1
+    },
+    "class_type": "VHS_LoadVideoPath",
+    "_meta": {
+      "title": "Load Frames"
+    }
+  },
+  "588": {
+    "inputs": {
+      "text": [
+        "625",
+        0
+      ]
+    },
+    "class_type": "ShowText|pysssss",
+    "_meta": {
+      "title": "Automatic Skip Frames Display"
+    }
+  },
+  "604": {
+    "inputs": {
+      "output_path": [
+        "327",
+        0
+      ],
+      "filename_prefix": "Frame",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "false",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "false",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "196",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "606": {
+    "inputs": {
+      "string": "/"
+    },
+    "class_type": "String to Text",
+    "_meta": {
+      "title": "Delimiter"
+    }
+  },
+  "609": {
+    "inputs": {
+      "output_path": [
+        "76",
+        0
+      ],
+      "filename_prefix": "SoftEgde",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "false",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "false",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "29",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "611": {
+    "inputs": {
+      "output_path": [
+        "126",
+        0
+      ],
+      "filename_prefix": "Canny",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "false",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "false",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "35",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "613": {
+    "inputs": {
+      "output_path": [
+        "127",
+        0
+      ],
+      "filename_prefix": "LineArt",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "false",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "false",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "34",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "615": {
+    "inputs": {
+      "output_path": [
+        "130",
+        0
+      ],
+      "filename_prefix": "OpenPose",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "false",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "false",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "131",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "617": {
+    "inputs": {
+      "output_path": [
+        "128",
+        0
+      ],
+      "filename_prefix": "Depth",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "false",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "false",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "425",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "619": {
+    "inputs": {
+      "output_path": [
+        "129",
+        0
+      ],
+      "filename_prefix": "Normal",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "false",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "false",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "53",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "621": {
+    "inputs": {
+      "output_path": [
+        "391",
+        0
+      ],
+      "filename_prefix": "Mask",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "false",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "false",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "388",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "623": {
+    "inputs": {
+      "output_path": [
+        "422",
+        0
+      ],
+      "filename_prefix": "SoftEgdePlus",
+      "filename_delimiter": "_",
+      "filename_number_padding": 4,
+      "filename_number_start": "false",
+      "extension": "png",
+      "dpi": 300,
+      "quality": 100,
+      "optimize_image": "false",
+      "lossless_webp": "false",
+      "overwrite_mode": "false",
+      "show_history": "false",
+      "show_history_by_prefix": "false",
+      "embed_workflow": "true",
+      "show_previews": "true",
+      "images": [
+        "406",
+        0
+      ]
+    },
+    "class_type": "Image Save",
+    "_meta": {
+      "title": "Image Save"
+    }
+  },
+  "625": {
+    "inputs": {
+      "int_": [
+        "582",
+        0
+      ]
+    },
+    "class_type": "CR Integer To String",
+    "_meta": {
+      "title": "🔧 CR Integer To String"
+    }
+  },
+  "627": {
+    "inputs": {
+      "int_": [
+        "560",
+        1
+      ]
+    },
+    "class_type": "CR Integer To String",
+    "_meta": {
+      "title": "🔧 CR Integer To String"
+    }
+  },
+  "628": {
+    "inputs": {
+      "int_": [
+        "560",
+        0
+      ]
+    },
+    "class_type": "CR Integer To String",
+    "_meta": {
+      "title": "🔧 CR Integer To String"
+    }
+  },
+  "629": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Bool",
+    "_meta": {
+      "title": "Enable OpenPose"
+    }
+  },
+  "631": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Bool",
+    "_meta": {
+      "title": "Enable HED - Softedge"
+    }
+  },
+  "633": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Bool",
+    "_meta": {
+      "title": "Enable LineArt"
+    }
+  },
+  "635": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Bool",
+    "_meta": {
+      "title": "Enable Canny"
+    }
+  },
+  "637": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Bool",
+    "_meta": {
+      "title": "Enable Normal"
+    }
+  },
+  "639": {
+    "inputs": {
+      "value": false
+    },
+    "class_type": "Bool",
+    "_meta": {
+      "title": "Enable Auto Mask"
+    }
+  },
+  "642": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Bool",
+    "_meta": {
+      "title": "Enable SoftEdgePlus"
+    }
+  },
+  "644": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Bool",
+    "_meta": {
+      "title": "Enable DepthAnything"
+    }
+  },
+  "646": {
+    "inputs": {
+      "value": true
+    },
+    "class_type": "Bool",
+    "_meta": {
+      "title": "Save Source Frames"
+    }
+  }
+}
