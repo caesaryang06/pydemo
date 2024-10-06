@@ -1,5 +1,5 @@
 import gradio as gr
-from tabs import tab1_info, tab2_info, tab3_info, tab4_info, tab5_info, tab6_info, tab7_info, tab8_info, demo_info
+from tabs import tab1_info, tab2_info, tab3_info, tab4_info, tab5_info, tab6_info, tab7_info, tab8_info, tab9_info, tab10_info, tab11_info
 
 # 加载 .env 文件
 from dotenv import load_dotenv, find_dotenv
@@ -32,7 +32,11 @@ if __name__ == "__main__":
                 tab7_info.func()
             with gr.Tab("comfyui流执行"):
                 tab8_info.func()
-            with gr.Tab("测试"):
-                demo_info.func()
+            with gr.Tab("软件邮箱"):
+                tab9_info.func()
+            with gr.Tab("邮箱管理"):
+                tab10_info.func()
+            with gr.Tab("CHatTTS"):
+                tab11_info.func()
     app.launch(share=False, auth=login)
     

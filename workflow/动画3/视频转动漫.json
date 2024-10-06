@@ -1,7 +1,7 @@
 {
   "1": {
     "inputs": {
-      "ckpt_name": "cardosAnime_v20.safetensors",
+      "ckpt_name": "SD15/animerge_v30.safetensors",
       "beta_schedule": "sqrt_linear (AnimateDiff)",
       "use_custom_scale_factor": false,
       "scale_factor": 0.18215

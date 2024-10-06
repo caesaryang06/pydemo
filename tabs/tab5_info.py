@@ -33,12 +33,27 @@ def merge_operation(files, audio, input_number):
     return merge_audio_paths,template_filepath
 
 
+def wav2mp3_operation(files, audio, input_number):
+    # 获取wav2mp3音频输出临时路径
+    template_filepath = os.getenv("WAV2MP3_TEMP_FOLDER")
+
+    # 删除临时文件夹下的内容
+    ccf.delete_folder_contents(template_filepath)
+
+    # wav 2 mp3
+    mp3_paths = ccf.convert_wav_to_mp3(
+        audio_files=files, output_dir=template_filepath)
+
+    return mp3_paths, template_filepath
+
+
 def submit_result(op,files,audio,input_number):
 
     # 定义函数字典
     dict_operations = {
         "切分": split_operation,
-        "合并": merge_operation
+        "合并": merge_operation,
+        "wav2mp3": wav2mp3_operation
     }
 
     audio_paths, template_filepath = dict_operations[op](
@@ -63,6 +78,8 @@ def update_select(op):
 
     if(op == "切分"):
         return gr.Files(visible=False,value=[]), gr.Audio(visible=True), gr.Number(visible=True)
+    elif(op == "合并"):
+        return gr.Files(visible=True,value=[]), gr.Audio(visible=False), gr.Number(visible=False)
     else:
         return gr.Files(visible=True,value=[]), gr.Audio(visible=False), gr.Number(visible=False)
     
@@ -70,7 +87,7 @@ def update_select(op):
 def func():
     with gr.Row():
         with gr.Column():
-            op_radio = gr.Radio(["切分", "合并"],
+            op_radio = gr.Radio(["切分", "合并", "wav2mp3"],
                                 label="操作类型", info="请选择操作类型:", value="切分")
             input_files = gr.Files(label="文件", type='filepath',
                                    file_count="directory", visible=False)
