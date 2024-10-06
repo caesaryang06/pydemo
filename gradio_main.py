@@ -1,5 +1,5 @@
 import gradio as gr
-from tabs import tab1_info, tab2_info, tab3_info, tab4_info, tab5_info, tab6_info, tab7_info, tab8_info, tab9_info, tab10_info, tab11_info
+from tabs import tab1_info, tab2_info, tab3_info, tab4_info, tab5_info, tab6_info, tab7_info, tab8_info, tab9_info, tab10_info
 
 # 加载 .env 文件
 from dotenv import load_dotenv, find_dotenv
@@ -36,7 +36,5 @@ if __name__ == "__main__":
                 tab9_info.func()
             with gr.Tab("邮箱管理"):
                 tab10_info.func()
-            with gr.Tab("CHatTTS"):
-                tab11_info.func()
-    app.launch(share=False, auth=login, server_name="0.0.0.0")
+    app.launch(share=False, auth=login, server_name="0.0.0.0", share=True)
     
