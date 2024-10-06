@@ -38,5 +38,5 @@ if __name__ == "__main__":
                 tab10_info.func()
             with gr.Tab("CHatTTS"):
                 tab11_info.func()
-    app.launch(share=False, auth=login)
+    app.launch(share=False, auth=login, server_name="0.0.0.0")
     
