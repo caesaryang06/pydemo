@@ -7,7 +7,6 @@ import os
 import uuid
 import time
 import datetime
-import pyautogui
 
 
 from pydub import AudioSegment
@@ -36,24 +35,6 @@ def convert_wav_to_mp3(audio_files, output_dir):
 
 
 
-# 打开指定页面函数传入位置字典
-def open_page(page_dict):
-    # 鼠标定位到任务栏指定软件
-
-    # 判断传入的字典中是否包含1这个key
-    if '1' in page_dict:
-        location_1_x, location_1_y = page_dict['1']
-        pyautogui.moveTo(location_1_x, location_1_y)
-        pyautogui.click()
-
-    time.sleep(1)
-    # 判断传入的字典中是否包含2这个key
-    if '2' in page_dict:
-        location_2_x, location_2_y = page_dict['2']
-        pyautogui.moveTo(location_2_x, location_2_y)
-        pyautogui.click()
-
-    time.sleep(1)
 
 
 # 返回指定路径下的所有文件名称

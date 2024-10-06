@@ -2,7 +2,7 @@ import webbrowser
 import pyautogui
 import time
 import pyperclip
-import tools.customer_common_funcs as common_funcs
+import tools.customer_common_funcs_local as common_funcs
 
 """
 控制discord中的domoai执行

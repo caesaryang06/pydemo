@@ -1,6 +1,6 @@
 import gradio as gr
 from tabs import tab1_info, tab2_info, tab3_info, tab4_info, tab5_info, tab6_info, tab7_info, tab8_info, tab9_info, tab10_info
-
+import sys
 # 加载 .env 文件
 from dotenv import load_dotenv, find_dotenv
 _ = load_dotenv(find_dotenv())
@@ -14,6 +14,9 @@ def login(username, password):
 
 
 if __name__ == "__main__":
+   
+    
+
     with gr.Blocks() as app:
         with gr.Tabs():
             with gr.Tab("生成随机密码"):
@@ -36,5 +39,7 @@ if __name__ == "__main__":
                 tab9_info.func()
             with gr.Tab("邮箱管理"):
                 tab10_info.func()
-    app.launch(share=False, auth=login, server_name="0.0.0.0", share=True)
-    
+    if sys.platform.startswith('win'):
+        app.launch(auth=login, share=False)
+    else:
+        app.launch(auth=login, server_name="0.0.0.0", share=True)
